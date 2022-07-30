@@ -9,6 +9,10 @@ import { AppService } from './app.service';
 @Module({
   imports: [
     ConfigModule.forRoot(),
+    // Default in memory case
+    // ThrottlerModule.forRoot(),
+
+    // Redis storage
     ThrottlerModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
